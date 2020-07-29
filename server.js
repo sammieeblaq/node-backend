@@ -29,11 +29,7 @@ app.get("/user", async (req, res) => {
   }
 });
 app.get("/post", async (req, res) => {
-  const user = await User.create({
-    name: "Joshua",
-    email: "sam@test.com",
-    password: "sjsi",
-  });
+  const user = await User.create(req.body);
   res.json(user);
 });
 
